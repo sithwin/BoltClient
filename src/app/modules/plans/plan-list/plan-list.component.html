@@ -1,0 +1,28 @@
+<h2>
+  Plan List
+</h2>
+<!-- <a [routerLink]="/add" class="btn btn-danger">New Plan</a> -->
+<table class="table">
+  <thead>
+    <tr class="table-active">
+      <th>Plan Code</th>
+      <th>Plan Name</th>
+      <th>Effective Date</th>
+      <th>Product Code</th>
+      <td colspan="2">Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plan of plans">
+      <td>{{plan.planCode}}</td>
+      <td>{{plan.planName}}</td>
+      <td>{{plan.effectiveDate | date }}</td>
+      <td>{{plan.productCode}}</td>
+      <td>
+        <a [routerLink]="['/add', plan.planCode]" class="btn btn-primary">Edit</a>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>
